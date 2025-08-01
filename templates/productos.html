@@ -9,13 +9,14 @@
     <div class="container py-5">
         <h1 class="mb-4 text-center">Listado de Productos</h1>
         <div class="row">
-            {% for nombre, precio, cantidad in productos %}
+            {% for producto in productos %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
+                    <img src="{{ producto.imagen }}" class="card-img-top" alt="{{ producto.nombre }}" style="max-height: 200px; object-fit: cover;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ nombre }}</h5>
-                        <p class="card-text">Precio: ${{ precio }}</p>
-                        <p class="card-text">Cantidad disponible: {{ cantidad }}</p>
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <p class="card-text">Precio: ${{ producto.precio }}</p>
+                        <p class="card-text">Cantidad disponible: {{ producto.cantidad }}</p>
                     </div>
                 </div>
             </div>
