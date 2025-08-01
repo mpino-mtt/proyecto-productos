@@ -17,7 +17,8 @@ def productos():
         cursor.execute("SELECT nombre, precio, cantidad from productos")
         resultados = cursor.fetchall()
         return render_template('/productos.html', productos=resultados)
-    
+
+@app.route('/health')    
 def health_check():
     return "OK", 200
 
